@@ -1,0 +1,38 @@
+{
+  "skill_name": "extract-youtube-creator-transcripts",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 https://www.youtube.com/@examplecreator 的所有公开视频字幕导出到 D:\\博主全集\\Example。我的电脑没装 Python、ffmpeg 或 yt-dlp，先告诉我要装什么再完成。",
+      "expected_output": "先预检并说明私有工具安装风险；确认后只抓字幕，输出长视频/短视频中的成对 SRT 与 MD。",
+      "files": [],
+      "assertions": [
+        "不会要求预装 Python、Node、ffmpeg、Homebrew、winget 或 Docker",
+        "安装前说明下载内容、位置和风险",
+        "输出结构只有长视频和短视频两个可见目录"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "更新我现有的 YouTube 博主字幕库。里面有的只有 SRT，有的 SRT 和 MD 都有，千万不要覆盖或生成重复文件。",
+      "expected_output": "扫描视频 ID，完整配对跳过，只有 SRT 时补 MD，冲突只报告不删除。",
+      "files": [],
+      "assertions": [
+        "以视频 ID 判断增量而不是只看标题",
+        "已有完整配对不会覆盖",
+        "同一视频 ID 多份文件时停止该项并报告"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "YouTube 提示 sign in to confirm you're not a bot，而且有几条视频完全没字幕。继续帮我完成，但不要碰我的主 Chrome 账号。",
+      "expected_output": "先尝试 PO Token Provider；仍失败才指导无痕小号 Cookie；无字幕列出 Whisper/API/人工选项但不自动执行。",
+      "files": [],
+      "assertions": [
+        "不会读取主浏览器 Cookie 或使用 cookies-from-browser",
+        "明确告知账号 Cookie 的限流与封禁风险",
+        "无字幕时提供方案但不自动下载音频或调用付费 API"
+      ]
+    }
+  ]
+}

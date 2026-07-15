@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "generated_at": "2026-07-15",
+  "deno": {
+    "version": "2.9.2",
+    "assets": {
+      "windows-x64": {
+        "url": "https://github.com/denoland/deno/releases/download/v2.9.2/deno-x86_64-pc-windows-msvc.zip",
+        "sha256": "5fe194d26ac5ef77fcc5288c2c438c7a0465f3b6180440ebf04092714bf2dcdf",
+        "size": 42721120
+      },
+      "windows-arm64": {
+        "url": "https://github.com/denoland/deno/releases/download/v2.9.2/deno-aarch64-pc-windows-msvc.zip",
+        "sha256": "28b57dc03be79ec312ee7baf30678865d84c7cb3764ac7da36e242abea6b3b1d",
+        "size": 40963147
+      },
+      "macos-x64": {
+        "url": "https://github.com/denoland/deno/releases/download/v2.9.2/deno-x86_64-apple-darwin.zip",
+        "sha256": "c953379e5a85a0a30e99aa51b807633e380e809a1181f53e4904d5fa73785bff",
+        "size": 42336919
+      },
+      "macos-arm64": {
+        "url": "https://github.com/denoland/deno/releases/download/v2.9.2/deno-aarch64-apple-darwin.zip",
+        "sha256": "687ae485168ba73a4f1ee3a954eb4f077eca82f2fefd236a6a83a3889287876c",
+        "size": 37981362
+      }
+    }
+  },
+  "yt_dlp": {
+    "version": "2026.07.04",
+    "assets": {
+      "windows-x64": {
+        "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.07.04/yt-dlp.exe",
+        "sha256": "52fe3c26dcf71fbdc85b528589020bb0b8e383155cfa81b64dd447bbe35e24b8",
+        "size": 18226085
+      },
+      "windows-arm64": {
+        "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.07.04/yt-dlp_arm64.exe",
+        "sha256": "1525690b037ecc0bb677e38e7147b0025179cbc9a8d0c57264e3100b18099280",
+        "size": 22250288
+      },
+      "macos-x64": {
+        "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.07.04/yt-dlp_macos",
+        "sha256": "498bd0dae17855c599d371d68ec5bafc439a9d8640e838be25c765a9792f261b",
+        "size": 38256544
+      },
+      "macos-arm64": {
+        "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.07.04/yt-dlp_macos",
+        "sha256": "498bd0dae17855c599d371d68ec5bafc439a9d8640e838be25c765a9792f261b",
+        "size": 38256544
+      }
+    }
+  },
+  "pot_provider": {
+    "version": "1.3.1",
+    "commit": "7608dd51ee813b48cf9a6d68c6e42cb197ce10e0",
+    "plugin": {
+      "url": "https://github.com/Brainicism/bgutil-ytdlp-pot-provider/releases/download/1.3.1/bgutil-ytdlp-pot-provider.zip",
+      "sha256": "b8ceec7f76143da172aaf5ebeec0c2d218e5680c063b931586bca48567069b38",
+      "size": 8067
+    },
+    "source": {
+      "url": "https://codeload.github.com/Brainicism/bgutil-ytdlp-pot-provider/zip/7608dd51ee813b48cf9a6d68c6e42cb197ce10e0",
+      "sha256": "255d9acbbb7540cb5e1ee8be82bc9a8655f1537b6974f3a5213d9398012afbb2",
+      "size": 126887
+    }
+  }
+}

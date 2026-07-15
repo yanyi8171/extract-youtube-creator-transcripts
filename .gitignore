@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Credentials and local runtime data
+cookies.txt
+*.cookies.txt
+runtime/
+downloads/
+jobs/
+
+# Transcript output when a user accidentally selects the repository
+长视频/
+短视频/
+*.part-*

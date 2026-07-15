@@ -1,0 +1,52 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-14]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.2
+
+      - name: Check formatting
+        run: deno fmt --check skills/extract-youtube-creator-transcripts/scripts
+
+      - name: Type-check
+        run: deno check skills/extract-youtube-creator-transcripts/scripts/main.ts
+
+      - name: Run unit tests
+        run: deno test --allow-read --allow-write skills/extract-youtube-creator-transcripts/scripts/tests
+
+      - name: Parse PowerShell bootstrap
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            'skills/extract-youtube-creator-transcripts/scripts/bootstrap.ps1',
+            [ref]$tokens,
+            [ref]$errors
+          ) | Out-Null
+          if ($errors.Count) {
+            $errors | Format-List | Out-String | Write-Error
+            exit 1
+          }
+
+      - name: Parse macOS bootstrap
+        if: runner.os == 'macOS'
+        run: sh -n skills/extract-youtube-creator-transcripts/scripts/bootstrap.sh
